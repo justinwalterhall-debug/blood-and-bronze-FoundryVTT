@@ -1,0 +1,362 @@
+.blood-and-bronze {
+  font-family: "Roboto", sans-serif;
+}
+
+.blood-and-bronze .sheet-header {
+  border-bottom: 2px solid #000;
+  margin-bottom: 10px;
+}
+
+.blood-and-bronze .sheet-header h1.charname {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.blood-and-bronze .sheet-header h1.charname input {
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  width: 100%;
+}
+
+.blood-and-bronze .sheet-body {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+
+.blood-and-bronze .left-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.blood-and-bronze .right-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.blood-and-bronze .form-group {
+  margin-bottom: 15px;
+}
+
+.blood-and-bronze .form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.blood-and-bronze .form-group input[type="text"],
+.blood-and-bronze .form-group input[type="number"],
+.blood-and-bronze .form-group textarea {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #999;
+  background: #fff;
+}
+
+.blood-and-bronze .form-group textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Abilities Section */
+.blood-and-bronze .abilities-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+  border: 2px solid #000;
+  padding: 10px;
+}
+
+.blood-and-bronze .ability-box {
+  display: grid;
+  grid-template-columns: 60px 50px 80px auto;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  border: 1px solid #666;
+  background: #f5f5f5;
+}
+
+.blood-and-bronze .ability-header {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.blood-and-bronze .ability-rating {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.blood-and-bronze .ability-rating .diamond,
+.blood-and-bronze .ability-rating .circle {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.blood-and-bronze .ability-rating .diamond {
+  transform: rotate(45deg);
+  background: #fff;
+}
+
+.blood-and-bronze .ability-rating .diamond input {
+  transform: rotate(-45deg);
+}
+
+.blood-and-bronze .ability-rating .circle {
+  border-radius: 50%;
+  background: #fff;
+}
+
+.blood-and-bronze .ability-rating .diamond.filled {
+  background: #000;
+}
+
+.blood-and-bronze .ability-rating .circle.filled {
+  background: #000;
+}
+
+.blood-and-bronze .ability-rating input[type="checkbox"] {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+.blood-and-bronze .ability-label {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.blood-and-bronze .ability-rollable {
+  background: #4a4a4a;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 11px;
+}
+
+.blood-and-bronze .ability-rollable:hover {
+  background: #333;
+}
+
+/* Rank Boxes */
+.blood-and-bronze .rank-boxes {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.blood-and-bronze .rank-boxes label {
+  margin: 0;
+  font-size: 10px;
+}
+
+.blood-and-bronze .rank-boxes input {
+  width: 50px;
+  padding: 2px;
+}
+
+/* Items Lists */
+.blood-and-bronze .items-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.blood-and-bronze .items-list .item {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-bottom: 1px solid #ccc;
+  gap: 10px;
+}
+
+.blood-and-bronze .items-list .item:hover {
+  background: #f0f0f0;
+}
+
+.blood-and-bronze .items-list .item-name {
+  flex: 1;
+  font-weight: bold;
+}
+
+.blood-and-bronze .items-list .item-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.blood-and-bronze .items-list .item-control {
+  cursor: pointer;
+  color: #666;
+}
+
+.blood-and-bronze .items-list .item-control:hover {
+  color: #000;
+}
+
+.blood-and-bronze .items-list .item-create {
+  padding: 8px;
+  text-align: center;
+  border: 1px dashed #999;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.blood-and-bronze .items-list .item-create:hover {
+  background: #f0f0f0;
+}
+
+/* Weapons and Armor */
+.blood-and-bronze .weapons-section h3,
+.blood-and-bronze .armor-section h3 {
+  margin: 15px 0 5px 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.blood-and-bronze .weapon-labels,
+.blood-and-bronze .armor-labels {
+  font-size: 10px;
+  font-weight: normal;
+}
+
+.blood-and-bronze .weapon-stats,
+.blood-and-bronze .armor-stats {
+  display: flex;
+  gap: 15px;
+  font-size: 12px;
+}
+
+/* Combat Stats */
+.blood-and-bronze .combat-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.blood-and-bronze .stat-box {
+  text-align: center;
+}
+
+.blood-and-bronze .stat-box label {
+  font-size: 10px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.blood-and-bronze .triangle-box {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.blood-and-bronze .circle-box {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.blood-and-bronze .endurance-values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.blood-and-bronze .endurance-values input {
+  width: 50px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid #999;
+}
+
+.blood-and-bronze .endurance-values .max {
+  font-weight: bold;
+}
+
+.blood-and-bronze .secondary-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Conditions */
+.blood-and-bronze .conditions-section {
+  border: 1px solid #999;
+  padding: 10px;
+  background: #f9f9f9;
+}
+
+.blood-and-bronze .condition-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.blood-and-bronze .condition-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.blood-and-bronze .condition-item label {
+  margin: 0;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* Equipment Section */
+.blood-and-bronze .equipment-section {
+  border: 1px solid #999;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.blood-and-bronze .equipment-section h3 {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  text-transform: uppercase;
+}
