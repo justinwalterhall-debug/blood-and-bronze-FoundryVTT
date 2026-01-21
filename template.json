@@ -1,0 +1,120 @@
+{
+  "Actor": {
+    "types": ["character", "npc"],
+    "templates": {
+      "base": {
+        "abilities": {
+          "guile": {
+            "rating": 0,
+            "score": 0,
+            "ability": 0
+          },
+          "lore": {
+            "rating": 0,
+            "score": 0,
+            "ability": 0
+          },
+          "senses": {
+            "rating": 0,
+            "score": 0,
+            "ability": 0
+          },
+          "craft": {
+            "rating": 0,
+            "score": 0,
+            "ability": 0
+          },
+          "vigor": {
+            "rating": 0,
+            "score": 0,
+            "ability": 0
+          },
+          "might": {
+            "rating": 0,
+            "score": 0,
+            "ability": 0
+          }
+        },
+        "endurance": {
+          "current": 0,
+          "max": 0
+        },
+        "burden": {
+          "total": 0
+        },
+        "fatigue": {
+          "total": 0
+        },
+        "defense": {
+          "total": 0
+        },
+        "armor": {
+          "total": 0
+        }
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "player": "",
+      "name": "",
+      "appearance": "",
+      "class": {
+        "name": "",
+        "rank": 0,
+        "nextRank": 0
+      },
+      "covenants": {
+        "rank": 0,
+        "nextRank": 0
+      },
+      "wealth": {
+        "total": 0,
+        "rank": 0
+      },
+      "background": "",
+      "conditions": {
+        "scarred": false,
+        "maimed": false,
+        "dead": false,
+        "heals": ""
+      }
+    },
+    "npc": {
+      "templates": ["base"],
+      "description": ""
+    }
+  },
+  "Item": {
+    "types": ["weapon", "armor", "equipment", "covenant", "condition"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "weapon": {
+      "templates": ["base"],
+      "damage": "",
+      "reach": "",
+      "weight": 0
+    },
+    "armor": {
+      "templates": ["base"],
+      "defense": 0,
+      "armorValue": 0,
+      "weight": 0
+    },
+    "equipment": {
+      "templates": ["base"],
+      "quantity": 1,
+      "weight": 0
+    },
+    "covenant": {
+      "templates": ["base"],
+      "rank": 0
+    },
+    "condition": {
+      "templates": ["base"],
+      "active": false
+    }
+  }
+}

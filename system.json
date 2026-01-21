@@ -1,0 +1,43 @@
+{
+  "id": "blood-and-bronze",
+  "title": "Blood & Bronze",
+  "description": "A custom system for Blood & Bronze tabletop RPG",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "13"
+  },
+  "authors": [
+    {
+      "name": "System Creator"
+    }
+  ],
+  "esmodules": ["module/blood-and-bronze.mjs"],
+  "styles": ["css/blood-and-bronze.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+    "documentTypes": {
+    "Actor": {
+      "character": {},
+      "npc": {}
+    },
+    "Item": {
+      "weapon": {"htmlFields": [
+          "description"
+        ]},
+      "armor": {},
+      "equipment": {},
+      "covenant": {},
+      "condition": {}
+    }
+  },
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "endurance",
+  "secondaryTokenAttribute": "fatigue"
+}
