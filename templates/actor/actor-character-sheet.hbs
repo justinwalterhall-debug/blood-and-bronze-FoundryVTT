@@ -1,0 +1,221 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+  <header class="sheet-header">
+    <h1 class="charname">
+      <input name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/>
+    </h1>
+  </header>
+
+  <div class="sheet-body">
+    <div class="left-column">
+      <!-- Player -->
+      <div class="form-group">
+        <label>Player</label>
+        <input type="text" name="system.player" value="{{system.player}}" />
+      </div>
+
+      <!-- Appearance -->
+      <div class="form-group">
+        <label>Appearance</label>
+        <textarea name="system.appearance" rows="3">{{system.appearance}}</textarea>
+      </div>
+
+      <!-- Class -->
+      <div class="form-group class-group">
+        <label>Class</label>
+        <input type="text" name="system.class.name" value="{{system.class.name}}" placeholder="Class name" />
+        <div class="rank-boxes">
+          <label>Rank</label>
+          <input type="number" name="system.class.rank" value="{{system.class.rank}}" />
+          <label>Next Rank</label>
+          <input type="number" name="system.class.nextRank" value="{{system.class.nextRank}}" />
+        </div>
+      </div>
+
+      <!-- Covenants -->
+      <div class="form-group covenants-group">
+        <label>Covenants</label>
+        <div class="covenant-list">
+          {{#each covenants as |covenant id|}}
+          <div class="item flexrow" data-item-id="{{covenant._id}}">
+            <div class="item-name">{{covenant.name}}</div>
+            <div class="item-controls">
+              <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+            </div>
+          </div>
+          {{/each}}
+          <div class="item-create" data-type="covenant">
+            <a><i class="fas fa-plus"></i> Add Covenant</a>
+          </div>
+        </div>
+        <div class="rank-boxes">
+          <label>Rank</label>
+          <input type="number" name="system.covenants.rank" value="{{system.covenants.rank}}" />
+          <label>Next Rank</label>
+          <input type="number" name="system.covenants.nextRank" value="{{system.covenants.nextRank}}" />
+        </div>
+      </div>
+
+      <!-- Wealth -->
+      <div class="form-group wealth-group">
+        <label>Wealth</label>
+        <input type="number" name="system.wealth.total" value="{{system.wealth.total}}" />
+        <label>Tot. Rank</label>
+        <input type="number" name="system.wealth.rank" value="{{system.wealth.rank}}" class="rank-input" />
+      </div>
+
+      <!-- Equipment -->
+      <div class="equipment-section">
+        <h3>Equipment</h3>
+        <ol class="items-list">
+          {{#each equipment as |item id|}}
+          <li class="item flexrow" data-item-id="{{item._id}}">
+            <div class="item-name">{{item.name}}</div>
+            <div class="item-controls">
+              <a class="item-control item-edit" title="Edit"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete" title="Delete"><i class="fas fa-trash"></i></a>
+            </div>
+          </li>
+          {{/each}}
+          <li class="item-create" data-type="equipment">
+            <a><i class="fas fa-plus"></i> Add Equipment</a>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Other -->
+      <div class="form-group">
+        <label>Other</label>
+        <textarea name="system.background" rows="4">{{system.background}}</textarea>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <!-- Abilities -->
+      <div class="abilities-section">
+        {{#each system.abilities as |ability key|}}
+        <div class="ability-box" data-ability="{{key}}">
+          <div class="ability-header">{{ability.label}}</div>
+          <div class="ability-rating">
+            <span class="diamond {{#if (gte ability.rating 0)}}filled{{/if}}">
+              <input type="checkbox" data-index="0" {{#if (gte ability.rating 0)}}checked{{/if}} />
+            </span>
+            <span class="circle {{#if (eq ability.score 1)}}filled{{/if}}">
+              <input type="checkbox" data-index="0" {{#if (eq ability.score 1)}}checked{{/if}} />
+            </span>
+          </div>
+          <div class="ability-label">{{key}}</div>
+          <div class="ability-rollable rollable" data-roll-type="ability" data-ability="{{key}}">
+            Roll
+          </div>
+        </div>
+        {{/each}}
+      </div>
+
+      <!-- Background -->
+      <div class="form-group">
+        <label>Background</label>
+        <textarea name="system.background" rows="2">{{system.background}}</textarea>
+      </div>
+
+      <!-- Weapons -->
+      <div class="weapons-section">
+        <h3>Weapons <span class="weapon-labels">dmg. reach wt.</span></h3>
+        <ol class="items-list">
+          {{#each weapons as |weapon id|}}
+          <li class="item flexrow" data-item-id="{{weapon._id}}">
+            <div class="item-name">{{weapon.name}}</div>
+            <div class="weapon-stats">
+              <span>{{weapon.system.damage}}</span>
+              <span>{{weapon.system.reach}}</span>
+              <span>{{weapon.system.weight}}</span>
+            </div>
+            <div class="item-controls">
+              <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+            </div>
+          </li>
+          {{/each}}
+          <li class="item-create" data-type="weapon">
+            <a><i class="fas fa-plus"></i> Add Weapon</a>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Armor -->
+      <div class="armor-section">
+        <h3>Armor <span class="armor-labels">def. armor wt.</span></h3>
+        <ol class="items-list">
+          {{#each armor as |armorItem id|}}
+          <li class="item flexrow" data-item-id="{{armorItem._id}}">
+            <div class="item-name">{{armorItem.name}}</div>
+            <div class="armor-stats">
+              <span>{{armorItem.system.defense}}</span>
+              <span>{{armorItem.system.armorValue}}</span>
+              <span>{{armorItem.system.weight}}</span>
+            </div>
+            <div class="item-controls">
+              <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+              <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+            </div>
+          </li>
+          {{/each}}
+          <li class="item-create" data-type="armor">
+            <a><i class="fas fa-plus"></i> Add Armor</a>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Combat Stats -->
+      <div class="combat-stats">
+        <div class="stat-box">
+          <label>Defense Total</label>
+          <div class="triangle-box">{{system.defense.total}}</div>
+        </div>
+        <div class="stat-box">
+          <label>Armor Total</label>
+          <div class="circle-box">{{system.armor.total}}</div>
+        </div>
+        <div class="stat-box endurance-box">
+          <label>Endurance</label>
+          <div class="endurance-values">
+            <input type="number" name="system.endurance.current" value="{{system.endurance.current}}" class="current" />
+            <span>/</span>
+            <span class="max">{{system.endurance.max}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="secondary-stats">
+        <div class="stat-box">
+          <label>Burden Total</label>
+          <input type="number" name="system.burden.total" value="{{system.burden.total}}" readonly />
+        </div>
+        <div class="stat-box">
+          <label>Fatigue</label>
+          <input type="number" name="system.fatigue.total" value="{{system.fatigue.total}}" />
+        </div>
+      </div>
+
+      <!-- Conditions -->
+      <div class="conditions-section">
+        <div class="condition-item">
+          <input type="checkbox" name="system.conditions.scarred" {{#if system.conditions.scarred}}checked{{/if}} />
+          <label>Scarred</label>
+        </div>
+        <div class="condition-item">
+          <input type="checkbox" name="system.conditions.maimed" {{#if system.conditions.maimed}}checked{{/if}} />
+          <label>Maimed. Lower all ability scores by -1.</label>
+        </div>
+        <div class="condition-item">
+          <input type="checkbox" name="system.conditions.dead" {{#if system.conditions.dead}}checked{{/if}} />
+          <label>Dead. Perform one last action.</label>
+        </div>
+        <div class="form-group">
+          <label>Heals</label>
+          <input type="text" name="system.conditions.heals" value="{{system.conditions.heals}}" />
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
